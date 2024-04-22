@@ -34,26 +34,15 @@
     easily with your mouse.
 */
 
-// Identified checkboxes classnames in google-styled cookie consent panel
-let classnames = [
-    'fc-preference-legitimate-interest', 
-    'fc-preference-consent'
-]
+// General selector for checkboxes within consent panels
+const checkboxes = document.querySelectorAll('input[type="checkbox"][class*="consent"]');
 
-// IMAO : fc stands for fucking cookies!
+// Uncheck all found checkboxes
+checkboxes.forEach(checkbox => { checkbox.checked = false; });
 
-// Loop over classnames to get every checkbox
-for (const classname of classnames) {
-    let checkboxes = document.getElementsByClassName(classname);
-
-    // If checkboxes with classname are found, loop over.
-    // If not, it loops over nothing. So it stops.
-    for (const checkbox of checkboxes) {
-
-        // Ensure you uncheck the box for the program, not just visually.
-        checkbox.value = false;
-
-        // Now uncheck it visually.
-        checkbox.removeAttribute('checked');
-    }
+// Provide feedback
+if (checkboxes.length) {
+    console.log(`${checkboxes.length} cookie consent checkboxes have been unchecked.`);
+} else {
+    console.warn('No cookie consent checkboxes found. Please ensure the cookie panel is visible.');
 }
