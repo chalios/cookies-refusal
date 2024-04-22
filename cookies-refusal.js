@@ -40,6 +40,8 @@ let classnames = [
     'fc-preference-consent'
 ]
 
+// IMAO : fc stands for fucking cookies!
+
 // Loop over classnames to get every checkbox
 for (const classname of classnames) {
     let checkboxes = document.getElementsByClassName(classname);
