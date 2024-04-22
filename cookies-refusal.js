@@ -35,7 +35,7 @@
 */
 
 // General selector for checkboxes within consent panels
-const checkboxes = document.querySelectorAll('input[type="checkbox"][class*="consent"]');
+const checkboxes = document.querySelectorAll('input[type="checkbox"][class*="consent"], input[type="checkbox"][class*="legit"]');
 
 // Uncheck all found checkboxes
 checkboxes.forEach(checkbox => { checkbox.checked = false; });
